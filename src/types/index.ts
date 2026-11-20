@@ -90,6 +90,7 @@ export interface Booking {
   totalAmountCents: number;
   paymentStatus: "pending" | "paid" | "refunded" | "failed";
   bookingStatus: BookingStatus;
+  provider?: "stripe" | "demo";
   contactNumber: string;
   deliveryAddress: string;
   notes?: string;
