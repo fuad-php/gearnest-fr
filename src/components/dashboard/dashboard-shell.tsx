@@ -147,6 +147,12 @@ export function DashboardShell({
 
   return (
     <div className="min-h-svh bg-background">
+      <a
+        href="#dashboard-main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:border focus:border-border focus:bg-card focus:px-4 focus:py-2.5 focus:text-sm focus:font-medium focus:shadow-sm"
+      >
+        Skip to dashboard content
+      </a>
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col bg-[#14231c] lg:flex">
         <div className="flex h-16 items-center border-b border-[#2a4036] px-5">
           <Link href="/" aria-label="GearNest home">
@@ -236,8 +242,7 @@ export function DashboardShell({
           </div>
         </header>
 
-        <div className="px-5 py-8 lg:px-8">{children}</div>
-      </div>
+        <div className="px-5 py-8 lg:px-8">{children}</div>      </div>
     </div>
   );
 }

@@ -25,6 +25,7 @@ const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(appUrl),
+  applicationName: "GearNest",
   title: {
     default: "GearNest — Rent the right gear",
     template: "%s · GearNest",
@@ -38,13 +39,36 @@ export const metadata: Metadata = {
     "vehicle rental",
     "GearNest",
   ],
+  authors: [{ name: "GearNest" }],
+  creator: "GearNest",
+  publisher: "GearNest",
+  category: "marketplace",
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  icons: {
+    icon: [{ url: "/gearnest-icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/gearnest-icon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     title: "GearNest — Rent the right gear",
     description:
       "A transparent rental marketplace for construction, photography, vehicles, agriculture, electronics and event gear.",
     type: "website",
     url: appUrl,
+    siteName: "GearNest",
+    locale: "en_US",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "GearNest — Rent the right gear",
+    description:
+      "Browse verified equipment, book with real availability and pay securely through Stripe.",
+  },
+  formatDetection: { telephone: false, address: false, email: false },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
