@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, BadgeCheck, MapPin, ShieldCheck, Star } from "lucide-react";
 import { ButtonLink } from "@/components/layout/button-link";
