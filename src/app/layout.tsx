@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -75,21 +76,29 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${bricolage.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        {children}
-        <Toaster
-          position="top-right"
-          toastOptions={{
-            style: {
-              background: "#ffffff",
-              color: "#14231c",
-              border: "1px solid #dcd7cb",
-              borderRadius: "12px",
-            },
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var k="gearnest-theme";var t=localStorage.getItem(k);if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.classList.toggle("dark",t==="dark");document.documentElement.style.colorScheme=t;}catch(e){}})();`,
           }}
         />
+        <ThemeProvider>
+          {children}
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              style: {
+                background: "var(--card)",
+                color: "var(--card-foreground)",
+                border: "1px solid var(--border)",
+                borderRadius: "12px",
+              },
+            }}
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

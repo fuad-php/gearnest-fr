@@ -19,6 +19,7 @@ import {
 import { authClient } from "@/lib/auth-client";
 import { clearTokenCache } from "@/lib/api";
 import { initials } from "@/lib/format";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import type { AppUser } from "@/types";
 
 const NAV = [
@@ -76,6 +77,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle />
           {isPending ? (
             <span className="h-9 w-24 animate-pulse rounded-lg bg-muted" />
           ) : user ? (
@@ -150,6 +152,10 @@ export function SiteHeader() {
             </nav>
 
             <div className="mt-auto flex flex-col gap-2 border-t border-border p-5">
+              <div className="mb-1 flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Appearance</span>
+                <ThemeToggle />
+              </div>
               {user ? (
                 <>
                   <div className="mb-2 flex items-center gap-3">

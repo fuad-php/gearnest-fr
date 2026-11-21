@@ -31,6 +31,7 @@ import {
 import { authClient } from "@/lib/auth-client";
 import { clearTokenCache } from "@/lib/api";
 import { initials } from "@/lib/format";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import type { AppUser } from "@/types";
 
 type NavItem = { href: string; label: string; icon: typeof LayoutDashboard };
@@ -228,6 +229,7 @@ export function DashboardShell({
           </div>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <span className="hidden text-sm text-muted-foreground sm:inline">
               {user.name}
             </span>
