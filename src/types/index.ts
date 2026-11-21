@@ -141,3 +141,11 @@ export interface ListResponse<T> {
   total: number;
   pages: number;
 }
+
+export interface BookingCounts {
+  all: number;
+  confirmed: number;
+  active: number;
+  completed: number;
+  cancelled: number;
+}
