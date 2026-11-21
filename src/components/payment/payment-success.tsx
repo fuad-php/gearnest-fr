@@ -127,7 +127,7 @@ export function PaymentSuccess({ sessionId }: { sessionId: string }) {
               </dl>
 
               {state.booking.provider === "demo" ? (
-                <p className="mt-4 rounded-xl bg-[#ece8de] p-3 text-[11px] leading-relaxed text-muted-foreground">
+                <p className="mt-4 rounded-xl bg-muted p-3 text-[11px] leading-relaxed text-muted-foreground">
                   Stripe keys are not configured on this deployment, so the
                   payment was simulated in demo mode. Add{" "}
                   <code className="font-mono">STRIPE_SECRET_KEY</code> to enable

@@ -13,7 +13,7 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="border-b border-border bg-[#ece8de]/50">
+    <section className="border-b border-border bg-muted/50">
       <Container className="py-14 lg:py-20">
         <p className="label-mono flex items-center gap-3 text-muted-foreground">
           <span className="h-px w-8 bg-accent" aria-hidden="true" />

@@ -139,7 +139,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-y border-border bg-[#ece8de]/50 py-16 lg:py-20">
+      <section className="border-y border-border bg-muted/50 py-16 lg:py-20">
         <Container>
           <SectionHeading
             eyebrow="What we believe"

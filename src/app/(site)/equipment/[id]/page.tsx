@@ -203,7 +203,7 @@ export default async function EquipmentDetailsPage({
                   </dl>
                 </section>
 
-                <section className="mt-8 rounded-2xl border border-border bg-[#ece8de]/60 p-5">
+                <section className="mt-8 rounded-2xl border border-border bg-muted/60 p-5">
                   <h2 className="flex items-center gap-2 font-heading text-lg">
                     <ShieldCheck className="size-4 text-primary" />
                     Rental terms

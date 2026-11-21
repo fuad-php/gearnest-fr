@@ -3,7 +3,7 @@ import { Container } from "@/components/layout/container";
 export default function EquipmentLoading() {
   return (
     <>
-      <section className="border-b border-border bg-[#ece8de]/50">
+      <section className="border-b border-border bg-muted/50">
         <Container className="py-12 lg:py-16">
           <div className="h-3 w-28 animate-pulse rounded bg-muted" />
           <div className="mt-5 h-12 w-full max-w-lg animate-pulse rounded bg-muted" />

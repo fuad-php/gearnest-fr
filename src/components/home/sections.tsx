@@ -18,7 +18,6 @@ import { SectionHeading } from "@/components/layout/section-heading";
 import { ButtonLink } from "@/components/layout/button-link";
 import { Reveal } from "@/components/motion/reveal";
 import { EquipmentCard } from "@/components/equipment/equipment-card";
-import { RENTAL_LABEL } from "@/lib/format";
 import type { Category, Equipment, Review } from "@/types";
 
 export function FeaturedSection({ equipment }: { equipment: Equipment[] }) {
@@ -61,7 +60,7 @@ export function FeaturedSection({ equipment }: { equipment: Equipment[] }) {
 
 export function CategoriesSection({ categories }: { categories: Category[] }) {
   return (
-    <section className="border-y border-border bg-[#ece8de]/50 py-20 lg:py-24">
+    <section className="border-y border-border bg-muted/50 py-20 lg:py-24">
       <Container>
         <SectionHeading
           eyebrow="02 — Categories"
