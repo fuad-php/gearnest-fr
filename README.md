@@ -175,6 +175,9 @@ The app is designed to stay usable without paid third-party keys:
   `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` are missing.
 - **Image uploads** — owners can always paste a direct image URL. File uploads go through
   `POST /api/uploads/image`, which keeps `IMGBB_API_KEY` on the server.
+- **Email** — completion emails are delivered by the API through **Mailgun** (with an SMTP
+  fallback). With no credentials the API logs the message instead of failing. Setup steps
+  live in the server README.
 
 ---
 
