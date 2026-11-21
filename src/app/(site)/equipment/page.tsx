@@ -3,7 +3,7 @@ import { PackageSearch } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { EquipmentCard } from "@/components/equipment/equipment-card";
 import { EquipmentFilters } from "@/components/equipment/equipment-filters";
-import { Pagination } from "@/components/equipment/pagination";
+import { Pagination } from "@/components/layout/pagination";
 import { Reveal } from "@/components/motion/reveal";
 import { publicApi } from "@/lib/api";
 import { FALLBACK_CATEGORIES } from "@/lib/categories";
@@ -73,7 +73,7 @@ export default async function EquipmentPage({
 
   return (
     <>
-      <section className="border-b border-border bg-[#ece8de]/50">
+      <section className="border-b border-border bg-muted/50">
         <Container className="py-12 lg:py-16">
           <p className="label-mono flex items-center gap-3 text-muted-foreground">
             <span className="h-px w-8 bg-accent" aria-hidden="true" />
@@ -118,7 +118,12 @@ export default async function EquipmentPage({
                   </Reveal>
                 ))}
               </div>
-              <Pagination page={list.page} pages={list.pages} />
+              <Pagination
+                page={list.page}
+                pages={list.pages}
+                total={list.total}
+                limit={list.limit}
+              />
             </>
           ) : (
             <div className="mt-8 flex flex-col items-center rounded-2xl border border-dashed border-border bg-card px-6 py-16 text-center">
