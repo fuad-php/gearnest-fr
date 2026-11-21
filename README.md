@@ -42,6 +42,11 @@ or **owner**; Google sign-ups always become customers.
   works, reviews, owner CTA), All Equipment, About, How It Works, Contact.
 - **Server-side catalogue** — search by name/location, filter by category, rental type, price
   range and availability, sort, paginate. All state lives in the URL.
+- **Pagination** — the catalogue and the customer booking history page through results in
+  small sections, driven by URL parameters so links stay shareable and the back button works.
+- **Dark / light theme** — a header toggle switches themes, remembers the choice in
+  `localStorage` and falls back to the OS preference. An inline script applies the stored
+  theme before first paint, so there is no flash of the wrong colour scheme.
 - **Equipment details** — gallery, specifications, rental terms, owner card, related gear,
   favourite toggle, and a booking panel that shows a live quote and remaining availability.
 - **Payments** — Stripe Checkout with server-calculated totals. A booking row is created
@@ -49,6 +54,8 @@ or **owner**; Google sign-ups always become customers.
   draft collection.
 - **Dashboards** — role-tinted rail, KPI cards, Recharts monthly charts, sticky table
   headers, mobile drawer, loading and empty states everywhere.
+- **Automated lifecycle** — the API runs an hourly `node-cron` sweep that completes bookings
+  whose rental end date has passed and emails the renter and the owner. See the server README.
 - **Design system** — warm editorial catalogue: paper `#F6F3EC`, ink `#14231C`, forest
   `#17493A`, accent `#E4572E`. Bricolage Grotesque / Inter / JetBrains Mono. Motion via
   `motion/react`, respecting `prefers-reduced-motion`.
@@ -194,11 +201,12 @@ src/
     api/auth/[...all]/ BetterAuth handler
   components/
     ui/                shadcn primitives
-    layout/            header, footer, container, headings, hero
+    layout/            header, footer, container, headings, hero, pagination
     home/              home sections
-    equipment/         cards, filters, pagination, booking panel, favourite button
+    equipment/         cards, filters, booking panel, favourite button
     dashboard/         shells, tables, forms, stat cards, status pills
     charts/            Recharts wrappers
+    theme/             theme provider and header toggle
     payment/           payment confirmation
     contact/           contact form
     motion/            reduced-motion-aware reveal helpers
